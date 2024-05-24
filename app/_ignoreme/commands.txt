@@ -1,0 +1,7 @@
+Commands:
+
+docker exec -it <container-id> /bin/bash # This goes into a container
+
+If you're in a mysql database container, you can use this command to look at the database:
+
+mysql -u root -p

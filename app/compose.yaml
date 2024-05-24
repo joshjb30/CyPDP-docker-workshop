@@ -12,3 +12,9 @@ services:
           path: requirements.txt 
     ports: 
       - 8000:5000
+  
+  mysql:
+    image: mysql:8.0 # image is from docker hub, using version 8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
