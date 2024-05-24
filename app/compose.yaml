@@ -1,0 +1,14 @@
+services:
+  flask-todo-app:
+    build: . # . means current directory
+    develop:
+      watch:
+        - action: sync # syncs the local path and target path
+          path: . # . means current directory
+          target: /code
+          ignore: # ignore files that we don't want to sync
+            - Dockerfile 
+        - action: rebuild # rebuilds the container triggers when requirements.txt is modified and saved.
+          path: requirements.txt 
+    ports: 
+      - 8000:5000
